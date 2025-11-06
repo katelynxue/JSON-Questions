@@ -9,11 +9,18 @@ console.log(filteredZ);
 const filteredEmpty = data.filter(book => book.title !=="");
 console.log(filteredEmpty);
 // 1. avg time it takes me to read a book
-const filteredReadBooks = data.filter(book => book.read !=="No");
+const filteredReadBooks = data.filter(book => 
+  book["Time on TBR (days)"] !== "N/A" && 
+  book["Time on TBR (days)"] !== "zzzzzz"
+);
 
-const timeOnTBR = data.forEach(book =>{
-    console.log(book['Time on TBR (days)'])
-})
+let sum = 0;
+for (let i = 0; i++; i<=data.length){
+    sum += arr[i];
+}
+return sum / arr.length;
+
+
 // 2. % of books that are read
 // 3. what my fav genre based on how many purchaes
 // 4. what year have i quired the most books
