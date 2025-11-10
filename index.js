@@ -43,8 +43,42 @@ console.log(allGenres);
 const genres = [...new Set(allGenres)];
 console.log(genres);
 
+let favGenre = null;
+let favCount = 0;
 
+for(let i = 0; i < genres.length; i++) {
+  const genre = genres[i];
+  const count = allGenres.filter(g => g === genre).length;
+
+  if (count > favCount) {
+    favCount = count;
+    favGenre = genre;
+  }
+}
+console.log(favGenre);
 
 // 4. what year have i aquired the most books
+const allDates = filteredBooks.map(book => book['Date Bought']);
+console.log(allDates);
+
+const filteredDates = allDates.filter(date => date && date !== "N/A" && date !== "zzzzzz")
+const allYears = filteredDates.map(date => date.split(", ")[1]);
+console.log(allYears);
+
+let mostCount = null;
+let mostYear = 0;
+
+for(let x = 0; x < allYears.length; x++) {
+  const year = allYears[x];
+  const count = allYears.filter(y => y === year).length;
+
+  if (count > mostCount) {
+    mostCount = count;
+    mostYear = year;
+  }
+}
+console.log(mostYear);
+
 // 5. come up with your own stat
+
 
