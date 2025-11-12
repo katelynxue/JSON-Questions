@@ -87,6 +87,11 @@ console.log("most books for this year",mostYear);
 // 5. come up with your own stat
 // How many books begin with the "A"
 
-const booksWithA = filteredBooks.filter()
+const booksWithA = filteredBooks.filter(book => 
+  typeof book.title === "string" &&
+  book.title.trim().split(" ")[0] === "A"
+);
+
+console.log("Number of books starting with A", booksWithA);
 
 
